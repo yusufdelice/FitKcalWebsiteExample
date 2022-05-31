@@ -11,4 +11,4 @@ Tüm aşamaları kendim, tek başıma yaptım ancak pek tabi ki internetten yara
 Ayrıca unutabileceğimi düşündüğüm çoğu komutun yanına notlar aldım, yapılışı hakkında detaylı bilgiler sunum pdf'inde mevcut.
 
 ## Kurulum
-htdocs klasörünü XAMPP'ın diskdeki dosyaları arasına kopyalamak yeterlidir. htdocs klasörünün içeriğini de kendi htdocs klasörünüze kopyalabilirsiniz. Sonrasında XAMPP'la apache ve mysql'i çalıştırmak gerekiyor.
+htdocs klasörünü XAMPP'ın diskdeki dosyaları arasına kopyalamak yeterlidir. htdocs klasörünün içeriğini de kendi htdocs klasörünüze kopyalabilirsiniz. Sonrasında XAMPP'la apache ve mysql'i çalıştırmak gerekiyor. Database için gerekli SQL emirlerini girip gerekli database'leri oluşturmayı unutmayın.
