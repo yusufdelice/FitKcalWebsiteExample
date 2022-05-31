@@ -1,0 +1,125 @@
+*{      /* buraya tüm css öğeleri için geçerli olmasını istediğimiz değerleri gireceğiz. */
+    box-sizing: border-box;     /* border box padding gibi ölçü değişimlerini içerik sınır uzunluklarına ekler böylece padding'i değiştirdiğimizde kutuların sınırları değişmez. */
+    margin: 0;
+    padding: 0;     /* aksini belirtmediğimiz sürece padding ve margin 0 olacak. */
+    list-style-type: none;      /* oluşturacağımız listelerde biz aksini belirtmedikçe madde başlarında nokta vs olmayacak */
+    text-decoration: none;      /* tüm paragraf, başlık vs. öğeler için varsayılan text-decoration none olur, yani alt çizgi vs olmaz */
+    transition: all 0.3s linear;        /* ??? */
+    outline: none;      /* tüm elementlerin dış çizgilerini default olarak none yapar. */
+}
+
+*::selection{       /* selection komutu bir metini seçtiğimiz zaman (kopyala yapıştır yaparken ki gibi) metinin ve arkaplanın döneceği renkleri ayarlamamızı sağlar. */
+    background-color: white;        /* arkaplanın rengi */
+    color: black;     /* yazının rengi */
+}
+
+body{       /* body'deki her öğe için geçerli olacak stiller */
+    font-family: "Tahoma", sans-serif;       /* yazı fontu */
+    background-color: rgb(53, 3, 3);
+    color: black;
+}
+
+.icon{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+/*--------------------------------------------------------------------------HEADER-------------------------------------------------------------------------------------*/
+header{     /* header'da ki her öğe için geçerli olacak */
+    width: 100%;        /* header'ın genişliği tüm sayfayı kaplayacak */
+    height: 15vh;      /* vh viewpoint'in %1'ini temsil eder. bu ölçütü kullanarak küçük ekranlarda da boyut korunmuş olur. */
+}
+
+header .navi{
+    background-color: black;
+}
+
+nav{
+    padding: 2% 6%;     /* nav içindeki öğelerin birbirleri ve nav'ın sınırları arasındaki uzaklık, ekranın yüzdesine göre */
+    display: flex;      /* nav'ın içerisine öğeleri sığdırır, amacı küçük ve büyük ekranlar için responsive bir şekilde çocuk elementleri yerleştirmektir */
+    justify-content: space-between;     /* öğeler birbirleri arasında boşluk bırakacaklar */
+    align-items: center;        /* merkezledik */
+    color: white;
+}
+
+nav .logo{      /* sitenin üstündeki logo için */
+    font-size: 2rem;        /* rem'in px'den farkı 1 rem'in 16 px'e denk gelmesi ve kullanıcı sayfayı zoomladığı zaman yazı tipinin orantılı olarak artması. */
+    color: red;
+    cursor: pointer;        /* imleç üzerine geldiğinde imleçi tıklama işaretine çevirir */
+}
+
+nav .logo span{     /* logo'nun spanla seçilen kısmı için */
+    color: darkred;
+}
+
+nav .linkler{     /* sayfa içi gezme butonları için */
+    padding-left: 0;
+}
+
+nav .linkler li{
+    display: inline-block;      /* inline liste öğelerinin yanyana olmasını sağladı. inline'dan farkı inline-block genişlik ve yükseklik vermemize olanak sağlayacak. */
+    margin-left: 1rem;      /* liste öğeleri arasındaki boşluk */
+    font-size: 1.2rem;
+}
+
+nav .linkler li a{    
+    color: rgb(185, 0, 0);
+}
+
+nav .linkler li a:hover {
+    color: white;
+}
+/*--------------------------------------------------------------------------GİRİŞ-------------------------------------------------------------------------------------*/
+
+.kayit{
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+}
+
+.kutu{
+    width: 380px;
+    height: 480px;
+    position: relative;
+    margin: 5% auto;
+    background: #fff;
+    padding: 5px;
+}
+
+.girdi-kismi{
+    margin:2.5rem;
+    text-align: center;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+
+.girdi{
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 1px solid #999;
+    background: transparent;
+}
+
+.girdi-buton{
+    margin-top: 5rem;
+    width: 85%;
+    padding: 10px 30px;
+    border: 0.1rem solid red;
+    background-color: rgba(0, 0, 0, 0.404);
+    color: red;
+    cursor:pointer;
+    border-radius: 30px;      /* butonun köşeleri eğik oldu */
+    font-size: 1.5rem;
+}
+
+.girdi-buton:hover{      /* butonun üstüne gelince olacaklar */
+    background-color: black;
+    font-size: 1.6rem;
+}

@@ -1,0 +1,345 @@
+*{      /* buraya tüm css öğeleri için geçerli olmasını istediğimiz değerleri gireceğiz. */
+    box-sizing: border-box;     /* border box padding gibi ölçü değişimlerini içerik sınır uzunluklarına ekler böylece padding'i değiştirdiğimizde kutuların sınırları değişmez. */
+    margin: 0;
+    padding: 0;     /* aksini belirtmediğimiz sürece padding ve margin 0 olacak. */
+    list-style-type: none;      /* oluşturacağımız listelerde biz aksini belirtmedikçe madde başlarında nokta vs olmayacak */
+    text-decoration: none;      /* tüm paragraf, başlık vs. öğeler için varsayılan text-decoration none olur, yani alt çizgi vs olmaz */
+    transition: all 0.3s linear;
+    outline: none;      /* tüm elementlerin dış çizgilerini default olarak none yapar. */
+}
+
+*::selection{       /* selection komutu bir metini seçtiğimiz zaman (kopyala yapıştır yaparken ki gibi) metinin ve arkaplanın döneceği renkleri ayarlamamızı sağlar. */
+    background-color: white;        /* arkaplanın rengi */
+    color: black;     /* yazının rengi */
+}
+
+body{       /* body'deki her öğe için geçerli olacak stiller */
+    font-family: "Tahoma", sans-serif;       /* yazı fontu */
+    background-color: black;
+    color:white;
+}
+
+.icon{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+/*--------------------------------------------------------------------------HEADER-------------------------------------------------------------------------------------*/
+header{     /* header'da ki her öğe için geçerli olacak */
+    width: 100%;        /* header'ın genişliği tüm sayfayı kaplayacak */
+    height: 100vh;      /* vh viewpoint'in %1'ini temsil eder. bu ölçütü kullanarak küçük ekranlarda da boyut korunmuş olur. */
+    background-image: url(./resimler/fitnessanasayfa.jpeg); /* arkaplan resmi */
+    background-position: center; /* merkezledik */
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 75% 100%, 25% 100%, 0% 50%);        /* resmin şeklini biraz kırptım, yüzdeleri https://bennettfeely.com/clippy/ sitesinden aldım */
+}
+
+header .navi{
+    background-color: rgba(0, 0, 0, 0.650);
+}
+
+nav{
+    padding: 2% 6%;     /* nav içindeki öğelerin birbirleri ve nav'ın sınırları arasındaki uzaklık, ekranın yüzdesine göre */
+    display: flex;      /* nav'ın içerisine öğeleri sığdırır, amacı küçük ve büyük ekranlar için responsive bir şekilde çocuk elementleri yerleştirmektir */
+    justify-content: space-between;     /* öğeler birbirleri arasında boşluk bırakacaklar */
+    align-items: center;        /* merkezledik */
+    color: white;
+}
+
+nav .logo{      /* sitenin üstündeki logo için */
+    font-size: 2rem;        /* rem'in px'den farkı 1 rem'in 16 px'e denk gelmesi ve kullanıcı sayfayı zoomladığı zaman yazı tipinin orantılı olarak artması. */
+    color: red;
+    cursor: pointer;        /* imleç üzerine geldiğinde imleçi tıklama işaretine çevirir */
+}
+
+nav .logo span{     /* logo'nun spanla seçilen kısmı için */
+    color: darkred;
+}
+
+nav .linkler{     /* sayfa içi gezme butonları için */
+    padding-left: 0;
+}
+
+nav .linkler li{
+    display: inline-block;      /* inline liste öğelerinin yanyana olmasını sağladı. inline'dan farkı inline-block genişlik ve yükseklik vermemize olanak sağlayacak. */
+    margin-left: 1rem;      /* liste öğeleri arasındaki boşluk */
+    font-size: 1.2rem;
+}
+
+nav .linkler li a{    
+    color: rgb(185, 0, 0);
+}
+
+nav .linkler li a:hover {
+    color: white;
+}   
+
+header .icerik{
+    position: absolute; /* içinde bulunduğu elemente göre kendisini konumlandırmasını sağlar. */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);       /* başlık ve butonu hareket ettirerek ekranın ortasına getirdik. */
+    text-align: center;
+}
+
+header .icerik h1{      /* başlık */
+    color: white;
+    font-size: 3rem;
+
+    background-color: black;
+    margin-left: -622px;
+    margin-right: -622px;
+}
+
+.btn{
+    padding: 0.5rem 1.5rem;     /* düğmenin sınırının düğmeye olan uzaklığı */
+    background-color: transparent;      /* butonun arkaplanı saydam oldu */
+    border: 0.1rem solid red;
+    color: red;
+    cursor:pointer;
+    border-radius: 0.5rem;      /* butonun köşeleri eğik oldu */
+    font-size: 1.5rem;
+}
+
+.btn:hover{      /* butonun üstüne gelince olacaklar */
+    background-color: black;
+    font-size: 1.6rem;
+}
+
+/*--------------------------------------------------------------------------HAKKIMIZDA KISMI---------------------------------------------------------------------------*/
+.hakkimizda .row{       /* resim ve metinin boyut/konum ayarları */
+    min-height: 100vh;
+    display: flex;      /* flex bir ancestor element olduğu sürece o element içindeki elementlerin kolayca yerleştirilebilmesini sağlar */
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;        /* elementlerin sınırın dışına çıkması durumunda sarılması için  */
+    padding: 2% 6%;
+}
+
+.hakkimizda .row .resim{        /* resim ile ilgili değerler */
+    flex: 1 1 40rem;
+    padding: 2rem;
+
+}
+
+.hakkimizda .row .resim img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;      /* resimin boyutunu değiştirmeden sığması için gerekirse kırpma işlemi uygular */
+}
+
+.hakkimizda .row .icerik h1{        /* içerik div'i içindeki başlık */
+    color: red;
+    font-size: 3rem;
+    margin-bottom: 4rem;
+}
+
+.hakkimizda .row .icerik p{     /* içerik div'i içindeki paragraf */
+    line-height: 1.3;
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+
+}
+
+.hakkimizda .row .icerik{       /* metin ile ilgili değerler */
+    flex: 1 1 40rem;
+    padding: 2rem;
+    text-align: center;
+    color: white;
+}
+
+/*--------------------------------------------------------------------------SERVİSLERİMİZ KISMI------------------------------------------------------------------------*/
+.hizmetlerimiz{
+        min-height: 100vh;
+        text-align: center;
+        padding: 2% 6%;
+}
+
+.hizmetlerimiz h1{
+    font-size: 3.8rem;
+    padding: 0.5rem;
+    display: inline-block;
+    color: red;
+    border-bottom: .3rem dashed red;
+    margin-bottom: 1.8rem;
+}
+
+.hizmetlerimiz .container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.hizmetlerimiz .container .box{
+    width: 31rem;       /* resimlerin boyutlarını belirledik */
+    height: 31rem;
+    margin: .5rem;
+    position: relative;
+    overflow: hidden;       /* resimlerin verdiğimiz boyutlar dışında taşan kısmı silinecek */
+}
+
+.hizmetlerimiz .container .box img{
+    width: 100%;        /* yukarıdaki boyutları verince resimlerin sadece köşeleri gözüküyor, yüzde yüz vererek resimlerin hepsini sığdırdık */ 
+    height: 100%;
+    object-fit: cover;      /* ancak resimlerin hepsini sığdırınca görüntü kalitesi düştü, cover ile güzel durması için bir kısmını program kırpıyor */
+}
+
+.hizmetlerimiz .container .box .bilgilendirme{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transform-origin: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hizmetlerimiz .container .box:hover .bilgilendirme{     /* oluşturduğumuz box div'inin üstüne imleç ile gelince bu kod aktifleşecek */
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.hizmetlerimiz .container .box .bilgilendirme h3{
+    font-size: 3rem;
+    color: red;
+    margin-bottom: 1.2rem;
+}
+
+.hizmetlerimiz .container .box .bilgilendirme p{
+    line-height: 2;
+    font-size: 1rem;
+    padding: 0 1rem;
+    margin-bottom: 1.2rem;
+}
+/*--------------------------------------------------------------------------ÜYELİK PAKETLERİ KISMI---------------------------------------------------------------------*/
+.uyelikpaketleri{
+    min-height: 100vh;
+    padding: 2% 6%;
+    text-align: center;
+}
+
+.uyelikpaketleri h1{        /* üyelik paketleri yazısı */
+    font-size: 3.8rem;
+    padding: 0.5rem;
+    display: inline-block;
+    color: red;
+    border-bottom: .3rem dashed red;
+    margin-bottom: 2rem;
+}
+
+.uyelikpaketleri .uyelikkartlari{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.uyelikpaketleri .uyelikkutulari{
+    width: 30rem;
+    box-shadow: 2px 2px 6px black;
+    margin-bottom: 4rem;
+    background-color: white;
+    color: black;
+}
+
+.uyelikkartlari .uyelikkutulari:hover{
+    transform: translateY(-30px);
+}
+
+.uyelikkutulari h2{     /* paket adı kısmı */
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    background-color: red;
+    padding: 1.2rem;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+
+.uyelikkutulari h3{     /* ücret kısmı */
+    margin-top: 2rem;
+    font-size: 4rem;
+    color: rgb(255, 70, 70);
+}
+
+.uyelikkutulari h3 sup{
+    font-size: 2.5rem;
+}
+
+.uyelikkutulari p{
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.uyelikkutulari ul{
+    padding: 2rem;
+}
+
+.uyelikkutulari ul li{
+    margin-bottom:0.5rem;
+    font-size:1.5rem;
+}
+
+.uyelikkutulari .btn{
+    margin-bottom: 2rem;
+}
+/*--------------------------------------------------------------------------İLETİŞİM KISMI------------------------------------------------------------------------*/
+.iletisim{
+    background-image: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url(./resimler/bizeulasin.jpg);
+    min-height: 100vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+}
+
+.iletisim h1{
+    font-size: 3.8rem;
+    padding: 0.5rem;
+    display: inline-block;
+    color: red;
+    border-bottom: .3rem dashed red;
+    margin-bottom: 2rem;
+}
+
+.iletisim form{
+    padding: 2% 6%;
+    margin: 0 auto;
+}
+
+.iletisim form .input_box{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.iletisim form .input_box input,textarea{
+    height: 4rem;
+    width: 49%;
+    background-color:transparent;
+    color: white;
+    padding: 3rem 1rem;
+    margin: 1rem 0;
+    font-size: 2rem;
+    border: 1px solid white;
+}
+
+.iletisim form textarea{
+    height: 20rem;
+    width: 100%;
+    resize: none;
+    padding: 1rem;
+}
+/*--------------------------------------------------------------------------FOOTER KISMI------------------------------------------------------------------------*/
+footer{
+    color:white;
+    padding: 2rem;
+    text-align: center;
+    background-color: #333;
+    font-size: 1.8rem;
+}
