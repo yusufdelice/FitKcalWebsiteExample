@@ -1,4 +1,4 @@
-# fitness-themed-working-website
+# FitKcal
 This is a working website template, with sign-up and log-in (also few other more) features.
 
 Bu bir website oluşturma projesidir. Abonelik alma, iptal etme, site veri tabanına mesaj gönderme, kaydolma ve giriş yapma özelliklerine sahip basit bir websitesi tasarlamak istedim.
